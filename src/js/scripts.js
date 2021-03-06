@@ -1,4 +1,4 @@
-const checkbox = document.getElementById("checkbox");
+const checkbox = document.getElementById("duration");
 const pricesElements = document.querySelectorAll(".card__number")
 
 const updatePrices = (duration) =>{

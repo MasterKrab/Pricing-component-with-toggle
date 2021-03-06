@@ -21,10 +21,14 @@
       width: 55px;
       height: 31px;
       border-radius: 1rem;
-      position: relative;
+      position: relative;     
 
       &:focus{
          outline: 3px dotted c.$linear-gradient-2;
+      }
+
+      &:active{
+         opacity: 0.5;
       }
 
       &::before{
@@ -57,7 +61,7 @@
       padding: 1rem;
 
 
-      @media screen and (min-width: 768px){
+      @media screen and (min-width: 1110px){
          grid-template-columns: 375px 350px 375px;
          gap: 0;
       }  
@@ -73,7 +77,7 @@
    border-radius: 10px;
    height: max-content;
 
-   @media screen and (min-width: 768px){
+   @media screen and (min-width: 1110px){
 
       &:first-child, &:last-child{
          margin-top: 1.5rem;
@@ -94,7 +98,7 @@
       background-image: linear-gradient(c.$linear-gradient-1, c.$linear-gradient-2);
       color: c.$very-light-grayish-blue;
 
-      @media screen and (min-width: 768px){
+      @media screen and (min-width: 1110px){
          padding-top: 2.5rem;
          padding-bottom: 2.5rem;
       }
@@ -102,13 +106,21 @@
 
    &__price{
       color: c.$dark-grayish-blue;
-      font-size: 5rem;
+      font-size: 3rem;
       margin-top: 0;
       margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &--white{
          color: c.$very-light-grayish-blue;
       }
+   }
+
+   &__number{
+      font-size: 4.5rem;
+      margin-left: 10px;
    }
 
    &__list{

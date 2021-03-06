@@ -1,0 +1,165 @@
+@use "../abstracts/vars/colors" as c;
+
+.plans{
+   &__form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+   }
+
+   &__label{
+      color: c.$light-grayish-blue;
+      font-size: 1.1rem;
+   }
+
+   &__checkbox{
+      background-image: linear-gradient(to right, c.$linear-gradient-1, c.$linear-gradient-2);
+      appearance: none;
+      margin-left: 30px;
+      margin-right: 30px;
+      width: 55px;
+      height: 31px;
+      border-radius: 1rem;
+      position: relative;
+
+      &:focus{
+         outline: 3px dotted c.$linear-gradient-2;
+      }
+
+      &::before{
+         content: "";
+         background-color: c.$very-light-grayish-blue;
+         width: 23px;
+         height: 23px;
+         border-radius: 50%;
+         position: absolute;
+         top: 4px;
+         left: 4px;
+         transition: transform .2s;
+      }
+
+      &:checked::before{
+         transform: translateX(23px);
+      }
+   }
+
+   &__label-screen-reader{
+      font-size: 0;
+      color: transparent;
+   }
+
+   &__cards{
+      display: grid;
+      grid-template-columns: minmax(315px, 400px);
+      gap: 1.5rem;
+      justify-content: center;
+      padding: 1rem;
+
+
+      @media screen and (min-width: 768px){
+         grid-template-columns: 375px 350px 375px;
+         gap: 0;
+      }  
+   }
+}
+
+.card{
+   background-color: #fff;
+   box-shadow: 0 0 5px 1px rgba(#000, 0.1);
+   text-align: center;
+   color: c.$grayish-blue;
+   padding: 1rem 2rem;
+   border-radius: 10px;
+   height: max-content;
+
+   @media screen and (min-width: 768px){
+
+      &:first-child, &:last-child{
+         margin-top: 1.5rem;
+      }
+
+      &:first-child{
+         border-top-right-radius: 0;
+         border-bottom-right-radius: 0;
+      }
+
+      &:last-child{
+         border-top-left-radius: 0;
+         border-bottom-left-radius: 0;
+      }
+   }
+
+   &--blue{
+      background-image: linear-gradient(c.$linear-gradient-1, c.$linear-gradient-2);
+      color: c.$very-light-grayish-blue;
+
+      @media screen and (min-width: 768px){
+         padding-top: 2.5rem;
+         padding-bottom: 2.5rem;
+      }
+   }
+
+   &__price{
+      color: c.$dark-grayish-blue;
+      font-size: 5rem;
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      &--white{
+         color: c.$very-light-grayish-blue;
+      }
+   }
+
+   &__list{
+      list-style: none;
+      padding-left: 0;
+   }
+   
+   &__item{
+      border-top: 1px solid lighten(c.$light-grayish-blue, 15%);
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      
+      &:last-child{
+         border-bottom: 1px solid lighten(c.$light-grayish-blue, 15%);
+      }
+
+      &--light, &--light:last-child{
+         border-color: rgba(lighten(c.$light-grayish-blue, 15%), 0.5)
+      }
+   }
+
+   &__link{
+      display: block;
+      background-image: linear-gradient(to right, c.$linear-gradient-1, c.$linear-gradient-2);
+      padding: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      color: c.$very-light-grayish-blue;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid transparent;
+
+      &:active{
+         background: inherit;
+         color:  c.$linear-gradient-2;
+         border-color: c.$linear-gradient-2;
+      }
+
+      &--white{
+         background: c.$very-light-grayish-blue;
+         color: c.$linear-gradient-2;
+
+         &:active{
+            background: c.$linear-gradient-2;
+            border-color: c.$very-light-grayish-blue;
+            color: c.$very-light-grayish-blue;
+         }
+      }
+
+      
+   }
+}

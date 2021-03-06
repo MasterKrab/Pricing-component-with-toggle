@@ -1,0 +1,8 @@
+@use "../abstracts/vars/colors" as c;
+
+.main-header{
+   text-align: center;
+   padding: 1.5rem;
+   color: c.$grayish-blue;
+   font-size: 1.2rem;
+}

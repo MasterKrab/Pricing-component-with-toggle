@@ -1,0 +1,19 @@
+@use "../abstracts/vars/colors" as c;
+
+html{
+   font-size: 15px;
+   font-family: Montserrat, sans-serif;
+   background-image: url(../../assets/img/bg-top.svg), url(../../assets/img/bg-bottom.svg);
+   background-color: c.$very-light-grayish-blue;
+   background-position: top right, bottom left;
+   background-repeat: no-repeat;
+   
+   @media screen and (max-width: 480px){
+      background-position: 220px top, bottom left;
+
+   }
+}
+
+body{
+   min-height: 100vh;
+}
